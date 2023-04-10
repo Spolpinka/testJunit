@@ -15,8 +15,8 @@ public class UserTest {
 
     @BeforeEach
     public void createNewUsers() {
-        first = new User("login", "1234@2353.44");
-        second = new User("login", "123444");
+        first = new User(EXPECTED_LOGIN, EXPECTED_EMAIL);
+        second = new User(EXPECTED_LOGIN, "123444");
         emptyUser = new User();
 
     }
@@ -25,9 +25,8 @@ public class UserTest {
     public void creatingFieldsUserTest() {
         String resultLogin = first.getLogin();
         String resultEmail = first.getEmail();
-        assertTrue(resultLogin != null);
-        assertTrue(resultEmail != null);
-
+        assertEquals(EXPECTED_LOGIN, resultLogin);
+        assertEquals(EXPECTED_EMAIL, resultEmail);
     }
 
     @Test
