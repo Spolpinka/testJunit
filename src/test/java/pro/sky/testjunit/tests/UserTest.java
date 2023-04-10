@@ -36,8 +36,13 @@ public class UserTest {
     }
 
     @Test
-    public void isEmailCorrect() {
+    public void isEmailCorrectTest() {
         assertTrue(first.getEmail().contains("@") && first.getEmail().contains("."));
+    }
+
+    @Test
+    public void isLoginAndEmailEqualsTest() {
+        assertNotEquals(first.getLogin(), first.getEmail());
     }
 
 }
