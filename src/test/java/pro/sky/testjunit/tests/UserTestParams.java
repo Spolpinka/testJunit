@@ -8,7 +8,6 @@ import pro.sky.testjunit.model.User;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static pro.sky.testjunit.constants.UserTestConstants.EXPECTED_EMAIL;
 
 class UserTestParams {
 
@@ -16,7 +15,7 @@ class UserTestParams {
         return Stream.of(
                 Arguments.of("user1", "mail@mail.com"),
                 Arguments.of("user2", "example@gmail.com"),
-                Arguments.of("user3", EXPECTED_EMAIL)
+                Arguments.of("user3", "email@email.email.com")
         );
     }
 
