@@ -10,11 +10,15 @@ public class User {
     private String email;
 
     public User(String login, String email) {
-        this.login = login;
+        if (!login.isEmpty() && !login.isBlank()) {
+            this.login = login;
+        } else {
+            throw new IllegalArgumentException();
+        }
         if (email.contains("@") && email.contains(".")
                 && email.indexOf("@") < email.lastIndexOf(".")
                 && email.indexOf("@") > 0
-        && email.charAt(email.indexOf("@")+1) != '.') { //потому что точка не может идти сразу после "@"
+                && email.charAt(email.indexOf("@") + 1) != '.') { //потому что точка не может идти сразу после "@"
             this.email = email;
         } else {
             throw new IllegalArgumentException();

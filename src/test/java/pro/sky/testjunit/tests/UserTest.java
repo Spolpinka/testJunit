@@ -40,7 +40,9 @@ public class UserTest {
 
     @Test
     public void isEmailCorrectTest() {
+        assertThrows(IllegalArgumentException.class, () -> new User("", expectedEmail));
         assertThrows(IllegalArgumentException.class, () -> new User("login", "incorrect email"));
+
     }
 
     @Test
