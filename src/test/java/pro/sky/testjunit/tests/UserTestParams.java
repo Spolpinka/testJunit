@@ -19,12 +19,27 @@ class UserTestParams {
         );
     }
 
+    public static Stream<Arguments> wrongParams() {
+        return Stream.of(
+                Arguments.of("12345", "mail@mail"),
+                Arguments.of("aaaaa", "mail.com"),
+                Arguments.of("user", "example@.ru"),
+                Arguments.of("newUser", "example")
+        );
+    }
+
     @ParameterizedTest
     @MethodSource("paramsForTests")
     public void testUserCreation(String login, String email) {
         User user = new User(login, email);
         assertEquals(login, user.getLogin());
         assertEquals(email, user.getEmail());
+    }
+
+    @ParameterizedTest
+    @MethodSource("wrongParams")
+    public void wrongEmailsTest(String login, String email) {
+        assertThrows(IllegalArgumentException.class, () -> new User(login, email));
     }
 
 }
