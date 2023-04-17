@@ -32,7 +32,7 @@ class UserTestParams {
     @MethodSource("paramsForTests")
     public void testUserCreation(String login, String email) {
         User user = new User(login, email);
-        assertEquals(login, user.getLogin());
+        assertEquals(login, user.getName());
         assertEquals(email, user.getEmail());
     }
 
