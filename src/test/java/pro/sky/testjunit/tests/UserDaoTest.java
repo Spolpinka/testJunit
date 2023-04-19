@@ -13,9 +13,8 @@ import pro.sky.testjunit.service.impls.UserServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+
 public class UserDaoTest {
 
     @InjectMocks
@@ -42,13 +41,4 @@ public class UserDaoTest {
         User nullUser = udi.getUserByName("notExistedName");
         assertNull(nullUser);
     }
-
-    @Test
-    public void checkUserExistTest() {
-        when(userService.checkUserExist(resultUser))
-                .thenReturn(true);
-        when(userService.checkUserExist(notExistedUser))
-                .thenReturn(false);
-    }
-
 }
