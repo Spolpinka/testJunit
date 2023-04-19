@@ -6,7 +6,6 @@ import pro.sky.testjunit.repository.UserDao;
 
 import java.util.ArrayList;
 import java.util.List;
-
 @Repository
 public class UserDaoImpl implements UserDao {
     private final List<User> users = new ArrayList<>();
