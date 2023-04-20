@@ -47,5 +47,8 @@ class UserServiceTest {
         assertTrue(out.checkUserExist(user1));
         assertTrue(out.checkUserExist(user2));
         assertFalse(out.checkUserExist(notExistedUser));
+
+        verify(daoMock1, never()).getUserByName("MrFirst");
+        verify(daoMock, never()).getUserByName("MrFirst");
     }
 }
