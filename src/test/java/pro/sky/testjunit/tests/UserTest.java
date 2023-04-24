@@ -25,7 +25,7 @@ public class UserTest {
 
     @Test
     public void creatingFieldsUserTest() {
-        String resultLogin = first.getLogin();
+        String resultLogin = first.getName();
         String resultEmail = first.getEmail();
         assertEquals(expectedLogin, resultLogin);
         assertEquals(expectedEmail, resultEmail);
@@ -34,7 +34,7 @@ public class UserTest {
     @Test
     public void defaultConstructorUserTest() {
         assertNotNull(emptyUser);
-        assertNull(emptyUser.getLogin());
+        assertNull(emptyUser.getName());
         assertNull(emptyUser.getEmail());
     }
 
@@ -47,8 +47,8 @@ public class UserTest {
 
     @Test
     public void isLoginAndEmailEqualsTest() {
-        assertNotEquals(first.getLogin(), first.getEmail());
-        assertNotEquals(second.getLogin(), second.getEmail());
+        assertNotEquals(first.getName(), first.getEmail());
+        assertNotEquals(second.getName(), second.getEmail());
     }
 
 }

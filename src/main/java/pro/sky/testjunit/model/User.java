@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class User {
-    private String login;
+    private String name;
     private String email;
 
-    public User(String login, String email) {
-        if (!login.isEmpty() && !login.isBlank()) {
-            this.login = login;
+    public User(String name, String email) {
+        if (!name.isEmpty() && !name.isBlank()) {
+            this.name = name;
         } else {
             throw new IllegalArgumentException();
         }
